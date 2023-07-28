@@ -18,6 +18,24 @@ colors: {
         900: '#111'
 
     }
-}});
+},
+textStyles:{
+    h1: {
+        fontSize: ['18px', '32px'],
+        fontWeight: 'bold',
+        lineHeight: '25px',
+        letterSpacing: '2px',
+        fontFamily: `'Montserrat Variable', sans-serif`,
+    },
+    h3: {
+        fontSize: ['10px', '18px'],
+        fontWeight: 'light',
+        lineHeight: '40px',
+        letterSpacing: '1px',
+        fontFamily: `'Montserrat Variable', sans-serif`,
+        color: 'grey'
+      },
+},
+});
 
 export default theme
