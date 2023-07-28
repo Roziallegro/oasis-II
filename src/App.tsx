@@ -9,7 +9,7 @@ import Search from "./components/search/Search";
 function App() {
   return (
     <>
-      <Grid templateAreas={`"header" "main"`} gap="10">
+      <Grid templateAreas={`"header" "main"`} gap="20">
         <GridItem area={"header"}>
           <Navbar />
         </GridItem>
