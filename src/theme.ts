@@ -23,15 +23,26 @@ textStyles:{
     h1: {
         fontSize: ['18px', '32px'],
         fontWeight: 'bold',
-        lineHeight: '25px',
+        lineHeight: ['15px', '35px'],
         letterSpacing: '2px',
+        fontFamily: `'Montserrat Variable', sans-serif`,
+    },
+    h2: {
+        fontSize: ['16px', '24px'],
+        fontWeight: 'bold',
+        lineHeight: ['2px', '16px'],
+        letterSpacing: '1px',
         fontFamily: `'Montserrat Variable', sans-serif`,
     },
     h3: {
         fontSize: ['10px', '18px'],
         fontWeight: 'light',
-        lineHeight: '40px',
-        letterSpacing: '1px',
+        fontFamily: `'Montserrat Variable', sans-serif`,
+        color: 'grey'
+      },
+    h4: {
+        fontSize: ['8px', '14px'],
+        fontWeight: 'light',
         fontFamily: `'Montserrat Variable', sans-serif`,
         color: 'grey'
       },

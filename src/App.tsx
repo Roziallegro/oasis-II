@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Grid, GridItem, HStack, Image } from "@chakra-ui/react";
 import ColourModeSwitch from "./components/ColormodeSwitch";
 import { Route, Routes } from "react-router-dom";
@@ -6,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import logo from "./assets/study logo.png";
 import Home from "./components/home/Home";
 import Browse from "./components/browse/Browse";
+import Search from "./components/search/Search";
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/browse" element={<Browse />} />
+            <Route path="/search" element={<Search />} />
           </Routes>
         </GridItem>
       </Grid>
