@@ -1,5 +1,5 @@
 import { Box, Center, HStack, VStack } from "@chakra-ui/react";
-import Study from "../../assets/study";
+import Study from "../assets/study";
 import MenuContainer from "./MenuContainer";
 
 const Home = () => {
