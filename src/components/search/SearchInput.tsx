@@ -19,10 +19,11 @@ const SearchInput = ({ onSearch }: Props) => {
         }}
       >
         <InputGroup>
-          <InputLeftElement children={<Icon boxSize={5} as={BsSearch} />} />
+          <InputLeftElement children={<Icon boxSize={4} as={BsSearch} />} />
           <Input
+            ref={ref}
             size={{ base: "md", lg: "lg" }}
-            borderRadius={10}
+            borderRadius={20}
             placeholder="Search a location..."
             variant="filled"
           />

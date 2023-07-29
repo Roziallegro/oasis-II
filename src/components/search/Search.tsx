@@ -9,14 +9,16 @@ interface Query {
 }
 
 const Search = () => {
-  //const [query, setQuery] = useState<Query>({} as Query);
+  const [query, setQuery] = useState<Query>({} as Query);
 
   return (
     <>
       <Center>
         <VStack>
           <Box width="100%">
-            <SearchInput onSearch={(searchText) => console.log(searchText)} />
+            <SearchInput
+              onSearch={(searchText) => setQuery({ ...query, searchText })}
+            />
           </Box>
           <br />
           <SearchSvg />

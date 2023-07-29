@@ -1,10 +1,10 @@
-import React from "react";
+import Heading from "./Heading";
 
 const Browse = () => {
   return (
-    <div>
-      <p>Here to browse</p>
-    </div>
+    <>
+      <Heading />
+    </>
   );
 };
 
