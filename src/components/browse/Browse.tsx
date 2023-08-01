@@ -1,9 +1,28 @@
 import Heading from "./Heading";
+import { useState } from "react";
+
+import { Directory } from "../../hooks/useDirectory";
+
+interface Filter {
+  selectedDirectory: Directory | null;
+  level: string;
+  selectedType: string;
+}
 
 const Browse = () => {
+  const [filter, setFilter] = useState<Filter>({} as Filter);
+
   return (
     <>
-      <Heading />
+      <Heading
+        selectedDirectory={filter.selectedDirectory}
+        onSelectDirectory={(selectedDirectory) =>
+          setFilter({ ...filter, selectedDirectory })
+        }
+        level={filter.level}
+        selectedType={filter.selectedType}
+        onSelectType={(selectedType) => setFilter({ ...filter, selectedType })}
+      />
     </>
   );
 };

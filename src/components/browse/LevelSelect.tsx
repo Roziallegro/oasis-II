@@ -9,8 +9,17 @@ import {
 import { BsChevronDown } from "react-icons/bs";
 
 import directory from "../../data/directory";
+import defaultLevel from "../../data/defaultLevel";
+import { Directory } from '../../hooks/useDirectory'
 
-const LevelSelect = () => {
+interface Props {
+  directory: Directory | null;
+  onSelectLevel: (level: string) => void;
+}
+
+const LevelSelect = ({ directory, onSelectLevel }: Props) => {
+let levels = ''
+
   return (
     <>
       <Menu>
@@ -18,12 +27,17 @@ const LevelSelect = () => {
           as={Button}
           rightIcon={<Icon boxSize={4} as={BsChevronDown} />}
         >
-          Level
+          {level ? level : "Level"}
         </MenuButton>
         <MenuList>
-          {directory.map((building) => (
-            <MenuItem key={building.name}>{building.name}</MenuItem>
-          ))}
+          {if (directory.name === building) 
+          directory.map((location) => 
+          (if (location.name === building)
+            levels = location.levels
+            levels.map ((level) => (<MenuItem key={level}>{level}</MenuItem>)))
+          )
+          else {defaultLevel.map}}
+
         </MenuList>
       </Menu>
     </>

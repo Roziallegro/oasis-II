@@ -8,9 +8,17 @@ import {
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 
-import directory from "../../data/directory";
+import { Directory } from "../../hooks/useDirectory";
+import useDirectory from "../../hooks/useDirectory";
 
-const BuildingSelect = () => {
+interface Props {
+  selectedDirectory: Directory | null;
+  onSelectDirectory: (directory: Directory) => void;
+}
+
+const BuildingSelect = ({ selectedDirectory, onSelectDirectory }: Props) => {
+  const { data } = useDirectory();
+
   return (
     <>
       <Menu>
@@ -18,11 +26,16 @@ const BuildingSelect = () => {
           as={Button}
           rightIcon={<Icon boxSize={4} as={BsChevronDown} />}
         >
-          Building
+          {selectedDirectory ? selectedDirectory.name : "Building"}
         </MenuButton>
         <MenuList>
-          {directory.map((building) => (
-            <MenuItem key={building.name}>{building.name}</MenuItem>
+          {data.map((directory) => (
+            <MenuItem
+              onClick={() => onSelectDirectory(directory)}
+              key={directory.name}
+            >
+              {directory.name}
+            </MenuItem>
           ))}
         </MenuList>
       </Menu>
