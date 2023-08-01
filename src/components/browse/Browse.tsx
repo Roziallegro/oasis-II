@@ -5,7 +5,7 @@ import { Directory } from "../../hooks/useDirectory";
 
 interface Filter {
   selectedDirectory: Directory | null;
-  level: string;
+  selectedLevel: string;
   selectedType: string;
 }
 
@@ -16,10 +16,13 @@ const Browse = () => {
     <>
       <Heading
         selectedDirectory={filter.selectedDirectory}
-        onSelectDirectory={(selectedDirectory) =>
-          setFilter({ ...filter, selectedDirectory })
+        onSelectDirectory={(selectedDirectory, selectedLevel) =>
+          setFilter({ ...filter, selectedDirectory, selectedLevel })
         }
-        level={filter.level}
+        selectedLevel={filter.selectedLevel}
+        onSelectLevel={(selectedLevel) =>
+          setFilter({ ...filter, selectedLevel })
+        }
         selectedType={filter.selectedType}
         onSelectType={(selectedType) => setFilter({ ...filter, selectedType })}
       />

@@ -8,18 +8,20 @@ import {
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 
-import directory from "../../data/directory";
 import defaultLevel from "../../data/defaultLevel";
-import { Directory } from '../../hooks/useDirectory'
+import { Directory } from "../../hooks/useDirectory";
 
 interface Props {
-  directory: Directory | null;
+  selectedDirectory: Directory | null;
+  selectedLevel: string;
   onSelectLevel: (level: string) => void;
 }
 
-const LevelSelect = ({ directory, onSelectLevel }: Props) => {
-let levels = ''
-
+const LevelSelect = ({
+  selectedDirectory,
+  selectedLevel,
+  onSelectLevel,
+}: Props) => {
   return (
     <>
       <Menu>
@@ -27,17 +29,20 @@ let levels = ''
           as={Button}
           rightIcon={<Icon boxSize={4} as={BsChevronDown} />}
         >
-          {level ? level : "Level"}
+          {selectedLevel ? selectedLevel : "Level"}
         </MenuButton>
         <MenuList>
-          {if (directory.name === building) 
-          directory.map((location) => 
-          (if (location.name === building)
-            levels = location.levels
-            levels.map ((level) => (<MenuItem key={level}>{level}</MenuItem>)))
-          )
-          else {defaultLevel.map}}
-
+          {selectedDirectory
+            ? selectedDirectory.levels.map((level) => (
+                <MenuItem onClick={() => onSelectLevel(level)} key={level}>
+                  {level}
+                </MenuItem>
+              ))
+            : defaultLevel.map((level) => (
+                <MenuItem onClick={() => onSelectLevel(level)} key={level}>
+                  {level}
+                </MenuItem>
+              ))}
         </MenuList>
       </Menu>
     </>

@@ -7,8 +7,9 @@ import { Directory } from "../../hooks/useDirectory";
 
 interface Props {
   selectedDirectory: Directory | null;
-  onSelectDirectory: (directory: Directory) => void;
-  level: string;
+  onSelectDirectory: (directory: Directory, selectedLevel: string) => void;
+  selectedLevel: string;
+  onSelectLevel: (selectedLevel: string) => void;
   selectedType: string;
   onSelectType: (selectedType: string) => void;
 }
@@ -16,7 +17,8 @@ interface Props {
 const Heading = ({
   selectedDirectory,
   onSelectDirectory,
-  level,
+  selectedLevel,
+  onSelectLevel,
   selectedType,
   onSelectType,
 }: Props) => {
@@ -30,9 +32,14 @@ const Heading = ({
           <HStack>
             <BuildingSelect
               selectedDirectory={selectedDirectory}
-              onSelectDirectory={(selectedDirectory) =>
-                onSelectDirectory(selectedDirectory)
+              onSelectDirectory={(selectedDirectory, selectedLevel) =>
+                onSelectDirectory(selectedDirectory, selectedLevel)
               }
+            />
+            <LevelSelect
+              selectedDirectory={selectedDirectory}
+              selectedLevel={selectedLevel}
+              onSelectLevel={(selectedLevel) => onSelectLevel(selectedLevel)}
             />
             <TypeSelect
               selectedType={selectedType}

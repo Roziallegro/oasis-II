@@ -13,7 +13,7 @@ import useDirectory from "../../hooks/useDirectory";
 
 interface Props {
   selectedDirectory: Directory | null;
-  onSelectDirectory: (directory: Directory) => void;
+  onSelectDirectory: (directory: Directory, selectedLevel: string) => void;
 }
 
 const BuildingSelect = ({ selectedDirectory, onSelectDirectory }: Props) => {
@@ -31,7 +31,7 @@ const BuildingSelect = ({ selectedDirectory, onSelectDirectory }: Props) => {
         <MenuList>
           {data.map((directory) => (
             <MenuItem
-              onClick={() => onSelectDirectory(directory)}
+              onClick={() => onSelectDirectory(directory, "")}
               key={directory.name}
             >
               {directory.name}
