@@ -3,6 +3,7 @@ import { Box, Center, HStack, Stack } from "@chakra-ui/react";
 import BuildingSelect from "./BuildingSelect";
 import LevelSelect from "./LevelSelect";
 import TypeSelect from "./TypeSelect";
+import CapacitySelect from "./CapacitySelect";
 import { Directory } from "../../hooks/useDirectory";
 
 interface Props {
@@ -12,6 +13,8 @@ interface Props {
   onSelectLevel: (selectedLevel: string) => void;
   selectedType: string;
   onSelectType: (selectedType: string) => void;
+  selectedCapacity: string;
+  onSelectCapacity: (selectedCapacity: string) => void;
 }
 
 const Heading = ({
@@ -21,6 +24,8 @@ const Heading = ({
   onSelectLevel,
   selectedType,
   onSelectType,
+  selectedCapacity,
+  onSelectCapacity,
 }: Props) => {
   return (
     <>
@@ -44,6 +49,12 @@ const Heading = ({
             <TypeSelect
               selectedType={selectedType}
               onSelectType={(selectedType) => onSelectType(selectedType)}
+            />
+            <CapacitySelect
+              selectedCapacity={selectedCapacity}
+              onSelectCapacity={(selectedCapacity) =>
+                onSelectCapacity(selectedCapacity)
+              }
             />
           </HStack>
         </Stack>

@@ -7,6 +7,7 @@ interface Filter {
   selectedDirectory: Directory | null;
   selectedLevel: string;
   selectedType: string;
+  selectedCapacity: string;
 }
 
 const Browse = () => {
@@ -25,6 +26,10 @@ const Browse = () => {
         }
         selectedType={filter.selectedType}
         onSelectType={(selectedType) => setFilter({ ...filter, selectedType })}
+        selectedCapacity={filter.selectedCapacity}
+        onSelectCapacity={(selectedCapacity) =>
+          setFilter({ ...filter, selectedCapacity })
+        }
       />
     </>
   );

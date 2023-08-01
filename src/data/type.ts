@@ -1,1 +1,4 @@
-export default ['Indoors', 'Outdoors', 'Cohort classroom']
+export default ['Air-conditioned', 
+                'Open air', 
+                'Cohort classroom', 
+                'Think tank']
