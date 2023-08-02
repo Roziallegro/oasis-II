@@ -2,6 +2,7 @@ import Heading from "./Heading";
 import { useState } from "react";
 
 import { Directory } from "../../hooks/useDirectory";
+import ResultsGrid from "./ResultsGrid";
 
 interface Filter {
   selectedDirectory: Directory | null;
@@ -31,6 +32,7 @@ const Browse = () => {
           setFilter({ ...filter, selectedCapacity })
         }
       />
+      {filter.selectedDirectory && <ResultsGrid />}
     </>
   );
 };
