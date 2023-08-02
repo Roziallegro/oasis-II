@@ -5,6 +5,7 @@ import {
   Button,
   MenuList,
   MenuItem,
+  Box,
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 
@@ -27,20 +28,20 @@ const LevelSelect = ({
       <Menu>
         <MenuButton
           as={Button}
-          rightIcon={<Icon boxSize={4} as={BsChevronDown} />}
+          rightIcon={<Icon boxSize={{ base: 3, lg: 4 }} as={BsChevronDown} />}
         >
-          {selectedLevel ? selectedLevel : "Level"}
+          <Box textStyle="h5">{selectedLevel ? selectedLevel : "Level"}</Box>
         </MenuButton>
         <MenuList>
           {selectedDirectory
             ? selectedDirectory.levels.map((level) => (
                 <MenuItem onClick={() => onSelectLevel(level)} key={level}>
-                  {level}
+                  <Box textStyle="h5">{level}</Box>
                 </MenuItem>
               ))
             : defaultLevel.map((level) => (
                 <MenuItem onClick={() => onSelectLevel(level)} key={level}>
-                  {level}
+                  <Box textStyle="h5">{level}</Box>
                 </MenuItem>
               ))}
         </MenuList>

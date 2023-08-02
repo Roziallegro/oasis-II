@@ -5,6 +5,7 @@ import {
   Button,
   MenuList,
   MenuItem,
+  Box,
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 
@@ -24,9 +25,11 @@ const BuildingSelect = ({ selectedDirectory, onSelectDirectory }: Props) => {
       <Menu>
         <MenuButton
           as={Button}
-          rightIcon={<Icon boxSize={4} as={BsChevronDown} />}
+          rightIcon={<Icon boxSize={{ base: 3, lg: 4 }} as={BsChevronDown} />}
         >
-          {selectedDirectory ? selectedDirectory.name : "Building"}
+          <Box textStyle="h5">
+            {selectedDirectory ? selectedDirectory.name : "Building"}
+          </Box>
         </MenuButton>
         <MenuList>
           {data.map((directory) => (
@@ -34,7 +37,7 @@ const BuildingSelect = ({ selectedDirectory, onSelectDirectory }: Props) => {
               onClick={() => onSelectDirectory(directory, "")}
               key={directory.name}
             >
-              {directory.name}
+              <Box textStyle="h5">{directory.name}</Box>
             </MenuItem>
           ))}
         </MenuList>

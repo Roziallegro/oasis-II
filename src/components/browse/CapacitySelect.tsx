@@ -5,6 +5,7 @@ import {
   Button,
   MenuList,
   MenuItem,
+  Box,
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 
@@ -21,14 +22,16 @@ const CapacitySelect = ({ selectedCapacity, onSelectCapacity }: Props) => {
       <Menu>
         <MenuButton
           as={Button}
-          rightIcon={<Icon boxSize={4} as={BsChevronDown} />}
+          rightIcon={<Icon boxSize={{ base: 3, lg: 4 }} as={BsChevronDown} />}
         >
-          {selectedCapacity ? selectedCapacity : "Capacity"}
+          <Box textStyle="h5">
+            {selectedCapacity ? selectedCapacity : "Capacity"}
+          </Box>
         </MenuButton>
         <MenuList>
           {capacity.map((capacity) => (
             <MenuItem onClick={() => onSelectCapacity(capacity)} key={capacity}>
-              {capacity}
+              <Box textStyle="h5">{capacity}</Box>
             </MenuItem>
           ))}
         </MenuList>

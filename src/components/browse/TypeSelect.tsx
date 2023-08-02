@@ -5,6 +5,7 @@ import {
   Button,
   MenuList,
   MenuItem,
+  Box,
 } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 
@@ -21,14 +22,14 @@ const TypeSelect = ({ selectedType, onSelectType }: Props) => {
       <Menu>
         <MenuButton
           as={Button}
-          rightIcon={<Icon boxSize={4} as={BsChevronDown} />}
+          rightIcon={<Icon boxSize={{ base: 3, lg: 4 }} as={BsChevronDown} />}
         >
-          {selectedType ? selectedType : "Type"}
+          <Box textStyle="h5">{selectedType ? selectedType : "Type"}</Box>
         </MenuButton>
         <MenuList>
           {type.map((type) => (
             <MenuItem onClick={() => onSelectType(type)} key={type}>
-              {type}
+              <Box textStyle="h5">{type}</Box>
             </MenuItem>
           ))}
         </MenuList>

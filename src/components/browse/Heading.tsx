@@ -1,4 +1,4 @@
-import { Box, Center, HStack, Stack } from "@chakra-ui/react";
+import { Box, Center, Stack, SimpleGrid } from "@chakra-ui/react";
 
 import BuildingSelect from "./BuildingSelect";
 import LevelSelect from "./LevelSelect";
@@ -34,7 +34,7 @@ const Heading = ({
           <Center>
             <Box textStyle="h3">Browse by:</Box>
           </Center>
-          <HStack>
+          <SimpleGrid columns={{ sm: 1, md: 2, lg: 4 }} spacing={3}>
             <BuildingSelect
               selectedDirectory={selectedDirectory}
               onSelectDirectory={(selectedDirectory, selectedLevel) =>
@@ -56,7 +56,7 @@ const Heading = ({
                 onSelectCapacity(selectedCapacity)
               }
             />
-          </HStack>
+          </SimpleGrid>
         </Stack>
       </Center>
     </>

@@ -39,7 +39,12 @@ const MenuContainer = ({
         <CardBody>
           <Center>
             <VStack>
-              <Icon boxSize={10} key={iconName} as={iconMap[iconName]} />
+              <Icon
+                boxSize={10}
+                key={iconName}
+                as={iconMap[iconName]}
+                padding="5px"
+              />
               <Button
                 onClick={routeChange}
                 height="100%"

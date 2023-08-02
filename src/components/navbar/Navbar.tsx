@@ -16,14 +16,14 @@ const Navbar = () => {
   return (
     <>
       <HStack justifyContent="space-between">
-        <Image src={logo} boxSize="55px" objectFit="contain" />
+        <Image src={logo} boxSize="50px" objectFit="contain" />
         <Box>
           <HStack justifyContent="space-around">
             <Button onClick={routeBrowse} variant="link">
-              Browse
+              <Box textStyle="h4"> Browse </Box>
             </Button>
             <Button onClick={routeSearch} variant="link">
-              Search
+              <Box textStyle="h4"> Search </Box>
             </Button>
             <ColourModeSwitch />
           </HStack>
